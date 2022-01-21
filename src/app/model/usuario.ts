@@ -5,5 +5,4 @@ export class Usuario{
     public senha: string
     public foto: string
     public tipo: string
-
 }
