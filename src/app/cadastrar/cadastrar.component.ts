@@ -47,7 +47,7 @@ export class CadastrarComponent implements OnInit {
       // arrow function pega a resposta e atribui ao usuario
 
       this.router.navigate(['/entrar'])
-      alert('Usuário cadastrado com sucesso')
+      alert('Usuário cadastrado com sucesso!')
     }
   }
 }
