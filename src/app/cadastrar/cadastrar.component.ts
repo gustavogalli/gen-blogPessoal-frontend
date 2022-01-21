@@ -22,5 +22,9 @@ export class CadastrarComponent implements OnInit {
     this.senhaEntry = event.target.value
   }
 
+  tipoUsuario(event: any){
+    this.tipoEntry = event.target.value
+  }
+
 
 }
