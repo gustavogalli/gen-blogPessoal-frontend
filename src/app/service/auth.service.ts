@@ -15,11 +15,11 @@ export class AuthService {
   ) { }
 
   entrar(usuarioLogin: UsuarioLogin): Observable<UsuarioLogin>{ //observable GARANTE o tipo que será passado
-    return this.http.post<UsuarioLogin>("http://localhost:8080/usuarios/logar", usuarioLogin) // salva no caminho em questão o parâmetro passado (usuarioLogin)
+    return this.http.post<UsuarioLogin>("https://blogpessoalgustavogalli.herokuapp.com/usuarios/logar", usuarioLogin) // salva no caminho em questão o parâmetro passado (usuarioLogin)
   }
 
   cadastrar(usuario: Usuario): Observable<Usuario>{
-    return this.http.post<Usuario>("http://localhost:8080/usuarios/cadastrar", usuario)
+    return this.http.post<Usuario>("https://blogpessoalgustavogalli.herokuapp.com/usuarios/cadastrar", usuario)
   }
 
   logado(){
