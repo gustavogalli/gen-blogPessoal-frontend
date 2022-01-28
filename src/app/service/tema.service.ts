@@ -27,4 +27,8 @@ export class TemaService {
     return this.http.put<Tema>('https://blogpessoalgustavogalli.herokuapp.com/tema', tema, this.token)
   }
 
+  deleteTema(id: number){ // não precisa de Observable pq não tá passando um objeto, só um id
+    return this.http.delete(`https://blogpessoalgustavogalli.herokuapp.com/tema/${id}`, this.token)
+  }
+
 }
