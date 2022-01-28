@@ -19,4 +19,8 @@ export class PostagemService {
     return this.http.get<Postagem[]>('https://blogpessoalgustavogalli.herokuapp.com/postagens', this.token)
   }
 
+  postPostagem(postagem: Postagem): Observable<Postagem>{
+    return this.http.post<Postagem>('https://blogpessoalgustavogalli.herokuapp.com/postagens', postagem, this.token)
+  }
+
 }
