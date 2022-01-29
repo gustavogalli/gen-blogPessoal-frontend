@@ -53,29 +53,46 @@
 
         <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="todasPostagens-tab">
 
-            <div class="card-group" *ngFor='let item of listaPostagens'>
-                <div class="card">
+            <!-- Todas as postagens -->
+            <div class="container w-75">
+
+            <div class="row row-cols-1 row-cols-md-2 g-4 mt-2">
+                <!-- Card -->
+                <div class="col mb-3" *ngFor='let item of listaPostagens'>
+                  <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">{{item.titulo}}</h5>
-                        <p class="card-text">{{item.texto}}</p>
-                        <p class="card-text">{{item.tema.descricao}}</p>
-                        <p>by: {{item.usuario.nome}}</p>
+                      <h4 class="card-title">{{item.titulo}}</h4>
+                      <p class="fst-italic fw-lighter">Tema: {{item.tema.descricao}}</p>
+                      <p class="card-text">{{item.texto}}</p>
+                      <div class="card-footer">
+                        <small class="text-muted">{{item.usuario.nome}} - {{item.data |date: 'dd/MM/yyyy'}}</small>
                     </div>
-                    <div class="card-footer">
-                        <small class="text-muted">{{item.data |date: 'dd/MM/yyyy'}}</small>
                     </div>
+                  </div>
                 </div>
+                <!-- /Card-->
+              </div>
 
             </div>
+            <!-- /Todas as postagens -->
 
         </div>
 
         <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="minhasPostagens-tab">
-            Minhas postagens
+
+            <!-- Minhas postagens -->
+
+
+
+
         </div>
 
         <div class="tab-pane fade" id="postagemTema" role="tabpanel" aria-labelledby="postagemTema-tab">
-            Postagens por tema
+
+            <!-- Minhas postagens -->
+
+
+
         </div>
 
     </div>
