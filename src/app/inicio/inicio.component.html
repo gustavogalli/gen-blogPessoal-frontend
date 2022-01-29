@@ -65,7 +65,8 @@
                       <p class="fst-italic fw-lighter">Tema: {{item.tema.descricao}}</p>
                       <p class="card-text">{{item.texto}}</p>
                       <div class="card-footer">
-                        <small class="text-muted">{{item.usuario.nome}} - {{item.data |date: 'dd/MM/yyyy'}}</small>
+                        <small class="text-muted">{{item.usuario.nome}}
+                            - {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm' }}</small>
                     </div>
                     </div>
                   </div>
