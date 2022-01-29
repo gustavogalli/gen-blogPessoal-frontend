@@ -53,6 +53,30 @@
 
         <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="todasPostagens-tab">
             Todas as postagens
+            <div class="div" *ngFor='let item of listaPostagens'>
+            <p>{{item.titulo}}</p>                
+            <p>{{item.texto}}</p>                
+
+            </div>
+
+            <!-- <div class="card-columns">
+
+                <div class="card text-center" *ngFor='let item of listaPostagens'>
+                    <div class="card-body">
+                      <h5 class="card-title">{{item.titulo}}</h5>
+                      <p class="card-text">{{item.texto}}</p>
+                      <p class="card-text"><small class="text-muted">
+                          {{item.data}}
+                      </small></p>
+
+                      <p>
+                        by: {{item.usuario.nome}}
+                      </p>
+                    </div>
+                  </div>
+                
+            </div> -->
+
         </div>
 
         <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="minhasPostagens-tab">
@@ -87,16 +111,19 @@
 
                 <div class="form-group py-2">
                     <label for="titulo">Titulo</label>
-                    <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo" placeholder="Digite o título">
+                    <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo"
+                        placeholder="Digite o título">
                 </div>
 
                 <div class="form-group py-2">
                     <label for="texto">Texto</label>
-                    <textarea [(ngModel)]='postagem.texto' class="form-control" name="texto" id="texto" rows="3"></textarea>
+                    <textarea [(ngModel)]='postagem.texto' class="form-control" name="texto" id="texto"
+                        rows="3"></textarea>
                 </div>
 
                 <div class="form-group py-2">
-                    <label for="texto">Escolha um tema ou <a routerLink="/tema" data-bs-dismiss="modal" data-bs-target="#my-modal">cadastre um novo</a></label>
+                    <label for="texto">Escolha um tema ou <a routerLink="/tema" data-bs-dismiss="modal"
+                            data-bs-target="#my-modal">cadastre um novo</a></label>
                     <select class="form-control" name="tema" id="tema" [(ngModel)]='idTema' (change)='findByIdTema()'>
                         <option *ngFor='let item of listaTemas' value="{{item.id}}">
                             {{item.descricao}}
@@ -107,7 +134,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)='publicar()'>Publicar</button>
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal"
+                    (click)='publicar()'>Publicar</button>
             </div>
         </div>
     </div>
