@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { PostagemDeleteComponent } from './edit/postagem-delete/postagem-delete.component';
+import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { TemaDeleteComponent } from './edit/tema-delete/tema-delete.component';
 import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { EntrarComponent } from './entrar/entrar.component';
@@ -20,7 +22,9 @@ const routes: Routes = [
   {path:'tema', component:TemaComponent},
 
   {path:'tema-edit/:id', component: TemaEditComponent}, // -> /: <- é como passamos parâmetro no endpoint
-  {path:'tema-delete/:id', component: TemaDeleteComponent}
+  {path:'tema-delete/:id', component: TemaDeleteComponent},
+  {path: 'postagem-edit/:id', component: PostagemEditComponent},
+  {path: 'postagem-delete/:id', component: PostagemDeleteComponent}
 ];
 
 @NgModule({
