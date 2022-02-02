@@ -55,7 +55,13 @@ export class UsuarioEditComponent implements OnInit {
         this.usuario = resp 
         
         this.router.navigate(['/inicio'])
-        alert('Usuário atualizado com sucesso!')
+        alert('Usuário atualizado com sucesso! Faça o login novamente!')
+        environment.token = ''
+        environment.nome = ''
+        environment.foto = ''
+        environment.id = 0
+
+        this.router.navigate(['/entrar'])
       })
     }
   }
