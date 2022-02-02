@@ -51,7 +51,7 @@ export class UsuarioEditComponent implements OnInit {
       alert('A senha digitada não confere!')
 
     } else {
-      this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
+      this.authService.atualizar(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp 
         
         this.router.navigate(['/inicio'])
