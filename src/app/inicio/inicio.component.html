@@ -96,8 +96,8 @@
                                     <small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:
                                         'HH:mm' }}</small>
 
-                                        <a class="text-info mx-2" href="">Editar</a>
-                                        <a class="text-danger mx-2" href="">Apagar</a>
+                                        <a [routerLink]="['/postagem-edit', item.id]" class="text-info mx-2" >Editar</a>
+                                        <a [routerLink]="['/postagem-delete', item.id]" class="text-danger mx-2">Apagar</a>
 
                                 </div>
                             </div>
