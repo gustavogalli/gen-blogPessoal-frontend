@@ -41,13 +41,15 @@ export class CadastrarComponent implements OnInit {
       alert('A senha digitada não confere!')
 
     } else {// envia o usuario como objeto para o servidor, mas o SUBSCRIBE transforma em JSON
-      this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {this.usuario = resp})
-      // cadastrar() envia para o servidor
-      // subscribe() transforma o objeto em JSON
-      // arrow function pega a resposta e atribui ao usuario
+      this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
+        this.usuario = resp
+        // cadastrar() envia para o servidor
+        // subscribe() transforma o objeto em JSON
+        // arrow function pega a resposta e atribui ao usuario
 
-      this.router.navigate(['/entrar'])
-      alert('Usuário cadastrado com sucesso!')
+        this.router.navigate(['/entrar'])
+        alert('Usuário cadastrado com sucesso!')
+      })
     }
   }
 }
