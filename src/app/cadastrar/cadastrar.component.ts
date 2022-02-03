@@ -1,6 +1,8 @@
+import { i18nMetaToJSDoc } from '@angular/compiler/src/render3/view/i18n/meta';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from '../model/Usuario';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -16,7 +18,8 @@ export class CadastrarComponent implements OnInit {
 
   constructor(
     private authService: AuthService, // injeção de dependência
-    private router: Router
+    private router: Router,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() { // método chamado quando a página iniciar
@@ -38,7 +41,7 @@ export class CadastrarComponent implements OnInit {
 
     // confirma se a senha digitada bate com a senha confirmada
     if (this.usuario.senha != this.senhaEntry) {
-      alert('A senha digitada não confere!')
+      this.alertas.showAlertDanger('A senha digitada não confere!')
 
     } else {// envia o usuario como objeto para o servidor, mas o SUBSCRIBE transforma em JSON
       this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
@@ -48,7 +51,7 @@ export class CadastrarComponent implements OnInit {
         // arrow function pega a resposta e atribui ao usuario
 
         this.router.navigate(['/entrar'])
-        alert('Usuário cadastrado com sucesso!')
+        this.alertas.showAlertSuccess('Usuário cadastrado com sucesso!')
       })
     }
   }
