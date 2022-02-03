@@ -58,7 +58,8 @@
 
                 <div class="row row-cols-1 row-cols-md-2 g-4 mt-2">
                     <!-- Card -->
-                    <div class="col mb-3" *ngFor='let item of listaPostagens'>
+                    <div class="col mb-3" 
+                    *ngFor='let item of listaPostagens | orderBy : key : reverse'>
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">{{item.titulo}}</h4>
@@ -86,7 +87,7 @@
 
                 <div class="row row-cols-1 row-cols-md-2 g-4 mt-2">
                     <!-- Card -->
-                    <div class="col mb-3" *ngFor='let item of usuario.postagem'>
+                    <div class="col mb-3" *ngFor='let item of usuario.postagem | orderBy : key : reverse'>
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">{{item.titulo}}</h4>
@@ -121,7 +122,7 @@
 
                 <div class="row row-cols-1 row-cols-md-2 g-4 mt-2" *ngFor='let tema of listaTemas'>
                     <!-- Card -->
-                    <div class="col mb-3" *ngFor='let item of tema.postagens'>
+                    <div class="col mb-3" *ngFor='let item of tema.postagens | orderBy : key : reverse'>
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">{{item.titulo}}</h4>
