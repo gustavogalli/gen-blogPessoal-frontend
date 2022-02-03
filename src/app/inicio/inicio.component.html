@@ -48,6 +48,16 @@
 
     </ul>
 
+    <!-- Pesquisar título -->
+    <div class="row d-flex justify-content-center mt-3">
+        <div class="col-md-4">
+            <div class="form-group">
+                <input type="text" class="form-control" id="titulo" placeholder="Pesquisar título de postagem" [(ngModel)]='tituloPost' (keyup)="findByTituloPostagem()">
+            </div>
+        </div>
+    </div>
+    <!-- /Pesquisar título -->
+
 
     <div class="tab-content" id="myTabContent">
 
